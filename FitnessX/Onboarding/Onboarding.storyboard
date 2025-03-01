@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zr1-GD-Jzh">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PoppinsBold.otf">
+            <string>Poppins-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="Nhx-FE-i5N">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zr1-GD-Jzh" customClass="WelcomeVC" customModule="FitnessX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vS7-TZ-84l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="kvK-lQ-9yk">
+                                <rect key="frame" x="115.66666666666669" y="405" width="162" height="67.333333333333314"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FitnessX" translatesAutoresizingMaskIntoConstraints="NO" id="ttS-H8-tsI">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="QMy-xS-C7j"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everybody Can Train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXa-Tz-RKd">
+                                        <rect key="frame" x="0.0" y="47" width="162" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.4823529412" green="0.43529411759999997" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrP-mI-kA8">
+                                <rect key="frame" x="16" y="722" width="361" height="60"/>
+                                <color key="backgroundColor" red="0.61568627450000002" green="0.80784313730000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Z8f-Zj-uhC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Get Started"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getStartedTapped:" destination="zr1-GD-Jzh" eventType="touchUpInside" id="UyP-BH-e7q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cDU-8z-V2Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kvK-lQ-9yk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cDU-8z-V2Y" secondAttribute="leading" constant="16" id="Hb5-MI-QkZ"/>
+                            <constraint firstItem="hrP-mI-kA8" firstAttribute="leading" secondItem="cDU-8z-V2Y" secondAttribute="leading" constant="16" id="QkU-SO-Z4b"/>
+                            <constraint firstItem="kvK-lQ-9yk" firstAttribute="centerY" secondItem="cDU-8z-V2Y" secondAttribute="centerY" id="fyl-id-b1G"/>
+                            <constraint firstItem="cDU-8z-V2Y" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kvK-lQ-9yk" secondAttribute="trailing" constant="16" id="hcd-fy-FlQ"/>
+                            <constraint firstItem="cDU-8z-V2Y" firstAttribute="trailing" secondItem="hrP-mI-kA8" secondAttribute="trailing" constant="16" id="pCy-lg-bdw"/>
+                            <constraint firstItem="cDU-8z-V2Y" firstAttribute="bottom" secondItem="hrP-mI-kA8" secondAttribute="bottom" constant="36" id="uSE-23-16D"/>
+                            <constraint firstItem="kvK-lQ-9yk" firstAttribute="centerX" secondItem="cDU-8z-V2Y" secondAttribute="centerX" id="zfD-mb-ZV9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="getStartedBtnOutlet" destination="hrP-mI-kA8" id="YAN-dP-fD3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cd-WZ-6Rk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-639" y="-2"/>
+        </scene>
+        <!--OnboardingVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OnboardingVC" customModule="FitnessX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wh4-H7-fIC">
+                                <rect key="frame" x="0.0" y="59" width="393" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="600" id="elf-W7-XNR"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="YlL-pc-bg5">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="5da-Oo-rTa"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Lb0-9P-lxR"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="bmw-s7-B51">
+                                <rect key="frame" x="16" y="675" width="361" height="26"/>
+                                <color key="pageIndicatorTintColor" red="0.61568627450000002" green="0.80784313730000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.58823529411764708" green="0.70196078431372544" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJo-nS-hGh" customClass="CircularProgressButton" customModule="FitnessX" customModuleProvider="target">
+                                <rect key="frame" x="321" y="730" width="56" height="56"/>
+                                <color key="backgroundColor" red="0.58823529411764708" green="0.70196078431372544" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Zgj-lf-ZEE"/>
+                                    <constraint firstAttribute="height" constant="56" id="qJn-z3-7if"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="rightArrow"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                        <color key="value" red="0.58823529409999997" green="0.70196078429999997" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundProgressColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderLineWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressGap">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ui4-lB-eKa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="UJo-nS-hGh" secondAttribute="bottom" constant="32" id="DmY-aC-ewq"/>
+                            <constraint firstItem="bmw-s7-B51" firstAttribute="top" secondItem="wh4-H7-fIC" secondAttribute="bottom" constant="16" id="Q87-Ql-vmo"/>
+                            <constraint firstItem="wh4-H7-fIC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="WTg-p6-Lb4"/>
+                            <constraint firstItem="wh4-H7-fIC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ebA-g4-xJu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bmw-s7-B51" secondAttribute="trailing" constant="16" id="mS7-wr-OOx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UJo-nS-hGh" secondAttribute="trailing" constant="16" id="o4s-Ko-s1P"/>
+                            <constraint firstItem="bmw-s7-B51" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="wY6-9P-q7o"/>
+                            <constraint firstItem="wh4-H7-fIC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wd1-6m-j7T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="wh4-H7-fIC" id="9HX-JW-Al2"/>
+                        <outlet property="nextButton" destination="UJo-nS-hGh" id="019-7j-8fO"/>
+                        <outlet property="pageControl" destination="bmw-s7-B51" id="HF1-BR-nqD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="UJo-nS-hGh">
+            <size key="intrinsicContentSize" width="18" height="22"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="FitnessX" width="162" height="37"/>
+        <image name="rightArrow" width="18" height="18"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
