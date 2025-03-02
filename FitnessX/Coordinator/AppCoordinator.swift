@@ -24,7 +24,7 @@ final class AppCoordinator: FitnessBaseCoordinator {
     
     override func start() {
         if !UserDefaults.standard.bool(forKey: "hasOnboarded") {
-            loadWelcome()
+            showCoordinator(.welcome)
         } else if !authService.isSignedin {
             loadSignin()
         } else {
@@ -32,10 +32,15 @@ final class AppCoordinator: FitnessBaseCoordinator {
         }
     }
     
-    private func loadWelcome(){
-        let coordinator = WelcomeCoordinator(navigationController: navigationController)
-        coordinator.delegate = self
-        addChild(coordinator, with: "welcome")
+    private func showCoordinator(_ type: CoordinatorType,
+                                 removingCurrent current: CoordinatorType? = nil) {
+        if let current = current {
+            removeChild(current.key)
+        }
+        let coordinator = type.create(navigationController: navigationController,
+                                      delegate: self)
+        addChild(coordinator, 
+                 with: type.key)
         coordinator.start()
     }
     
@@ -49,25 +54,16 @@ final class AppCoordinator: FitnessBaseCoordinator {
 
 extension AppCoordinator: WelcomeCoordinatorDelegate {
     func welcomeDidRequestOnboarding() {
-        //remove welcome coordinator
-        removeChild("welcome")
-        
-        
-        // showOnboarding
-        let coordinator = OnboardingCoordinator(navigationController: navigationController)
-        coordinator.delegate = self
-        addChild(coordinator, with: "onboarding")
-        coordinator.start()
+        showCoordinator(.onboarding,
+                        removingCurrent: .welcome)
     }
 }
 
 
 extension AppCoordinator: OnboardingCoordinatorDelegate {
     func onboardingDidComplete() {
-        removeChild("onboarding")
-        
-        //loadSignup
-        loadSignup()
+        showCoordinator(.signup,
+                        removingCurrent: .onboarding)
     }
     
     private func loadSignup() {
@@ -80,12 +76,12 @@ extension AppCoordinator: OnboardingCoordinatorDelegate {
 
 extension AppCoordinator: SignUpCoordinatorDelegate {
     func signUpDidComplete() {
-        removeChild("signup")
-        //loadMainFlow()
+        showCoordinator(.main, 
+                        removingCurrent: .signup)
     }
     
     func signUpDidRequestLogin() {
-        removeChild("signup")
-        //loadLogin()
+        showCoordinator(.main,
+                        removingCurrent: .signup)
     }
 }

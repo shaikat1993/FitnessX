@@ -27,6 +27,7 @@
 		927895262D70AF4F0091F465 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927895252D70AF4F0091F465 /* Coordinator.swift */; };
 		927895282D70AF650091F465 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927895272D70AF650091F465 /* BaseCoordinator.swift */; };
 		9278952B2D70B39C0091F465 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278952A2D70B39C0091F465 /* AppCoordinator.swift */; };
+		9280454A2D74C7F70050E15A /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928045492D74C7F70050E15A /* CoordinatorType.swift */; };
 		928B9CC52D71D76D00C74958 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B9CC42D71D76D00C74958 /* OnboardingCoordinator.swift */; };
 		928B9CC72D71D79900C74958 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B9CC62D71D79900C74958 /* OnboardingViewModel.swift */; };
 		92BB8B6D2D2B140200A843ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BB8B6C2D2B140200A843ED /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		927895252D70AF4F0091F465 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		927895272D70AF650091F465 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		9278952A2D70B39C0091F465 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		928045492D74C7F70050E15A /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		928B9CC42D71D76D00C74958 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		928B9CC62D71D79900C74958 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		92BB8B692D2B140200A843ED /* FitnessX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 				927895272D70AF650091F465 /* BaseCoordinator.swift */,
 				927895252D70AF4F0091F465 /* Coordinator.swift */,
 				9278952A2D70B39C0091F465 /* AppCoordinator.swift */,
+				928045492D74C7F70050E15A /* CoordinatorType.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				927059E12D7335C700358237 /* AuthService.swift in Sources */,
 				921E90472D2D59200002FD1C /* UIView.swift in Sources */,
 				92BB8B852D2B18D500A843ED /* OnboardingSlideModel.swift in Sources */,
+				9280454A2D74C7F70050E15A /* CoordinatorType.swift in Sources */,
 				921E90452D2D53F10002FD1C /* OnboardingVC.swift in Sources */,
 				92F2E8902D46C34A0064886F /* CustomTextField.swift in Sources */,
 				92BB8BA12D2B252000A843ED /* Fonts.swift in Sources */,
