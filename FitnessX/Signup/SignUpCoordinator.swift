@@ -27,9 +27,9 @@ class SignUpCoordinator: FitnessBaseCoordinator {
 //        viewModel.coordinator = self
 //        welcomeVC.configure(with: viewModel)
         
-        // Set as root
-        navigationController.setViewControllers([signupVC],
-                                                animated: true)
+        // Push using NavigationManager
+        NavigationManager.shared.navigate(to: signupVC,
+                                          using: .push(animated: true))
     }
     
     func showLogin() {

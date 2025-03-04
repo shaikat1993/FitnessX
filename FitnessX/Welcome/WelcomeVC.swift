@@ -11,14 +11,11 @@ class WelcomeVC: UIViewController {
 
     @IBOutlet weak var getStartedBtnOutlet: UIButton!
     
-    private var vm: WelcomeViewModel?
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+    private var viewModel: WelcomeViewModel?
+
     
     func configure(with viewModel: WelcomeViewModel) {
-        self.vm = viewModel
+        self.viewModel = viewModel
     }
    
     override func viewDidLoad() {
@@ -28,6 +25,6 @@ class WelcomeVC: UIViewController {
     }
     
     @IBAction func getStartedTapped(_ sender: UIButton) {
-        vm?.getStartedTapped()
+        viewModel?.getStartedTapped()
     }
 }

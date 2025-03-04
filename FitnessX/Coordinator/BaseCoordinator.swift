@@ -5,7 +5,6 @@
 //  Created by Md Sadidur Rahman on 27/2/25.
 //
 
-import Foundation
 import UIKit
 
 class FitnessBaseCoordinator: Coordinator {
@@ -16,21 +15,26 @@ class FitnessBaseCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         setupNavigationBar()
+        NavigationManager.shared.setup(with: navigationController)
     }
     
     private func setupNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemBackground
-        appearance.shadowColor = .clear
+        // Show navigation bar
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithOpaqueBackground()
+//        appearance.backgroundColor = .systemBackground
+//        appearance.shadowColor = .clear
+//        
+//        navigationController.navigationBar.standardAppearance = appearance
+//        navigationController.navigationBar.scrollEdgeAppearance = appearance
         
-        
-        navigationController.navigationBar.standardAppearance = appearance
-        navigationController.navigationBar.scrollEdgeAppearance = appearance
+        // Hide navigation bar
+        navigationController.setNavigationBarHidden(true, 
+                                                    animated: false)
+        navigationController.navigationBar.isHidden = true
     }
     
     func start() {
         fatalError("Subclasses must implement start()")
     }
 }
-

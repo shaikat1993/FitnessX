@@ -11,13 +11,16 @@ import UIKit
 final class AppCoordinator: FitnessBaseCoordinator {
     private let window: UIWindow
     private let authService: AuthServiceType
+    private var currentCoordinator: Coordinator?
     
     init(window: UIWindow,
          authService: AuthServiceType) {
         self.window = window
         self.authService = authService
+        // Create navigation controller
+        let navigationController = UINavigationController()
         
-        super.init(navigationController: UINavigationController())
+        super.init(navigationController: navigationController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
@@ -32,16 +35,17 @@ final class AppCoordinator: FitnessBaseCoordinator {
         }
     }
     
-    private func showCoordinator(_ type: CoordinatorType,
+    func showCoordinator(_ type: CoordinatorType, 
                                  removingCurrent current: CoordinatorType? = nil) {
+        // First add new coordinator, then remove old one to prevent deallocation issues
+        let coordinator = type.create(navigationController: navigationController, delegate: self)
+        addChild(coordinator, with: type.key)
+        currentCoordinator = coordinator
+        coordinator.start()
+        
         if let current = current {
             removeChild(current.key)
         }
-        let coordinator = type.create(navigationController: navigationController,
-                                      delegate: self)
-        addChild(coordinator, 
-                 with: type.key)
-        coordinator.start()
     }
     
     private func loadSignin(){
@@ -52,6 +56,7 @@ final class AppCoordinator: FitnessBaseCoordinator {
     }
 }
 
+// MARK: - Coordinator Delegates
 extension AppCoordinator: WelcomeCoordinatorDelegate {
     func welcomeDidRequestOnboarding() {
         showCoordinator(.onboarding,
@@ -59,10 +64,9 @@ extension AppCoordinator: WelcomeCoordinatorDelegate {
     }
 }
 
-
 extension AppCoordinator: OnboardingCoordinatorDelegate {
     func onboardingDidComplete() {
-        showCoordinator(.signup,
+        showCoordinator(.signup(email: nil),
                         removingCurrent: .onboarding)
     }
     
@@ -77,11 +81,11 @@ extension AppCoordinator: OnboardingCoordinatorDelegate {
 extension AppCoordinator: SignUpCoordinatorDelegate {
     func signUpDidComplete() {
         showCoordinator(.main, 
-                        removingCurrent: .signup)
+                        removingCurrent: .signup(email: nil))
     }
     
     func signUpDidRequestLogin() {
         showCoordinator(.main,
-                        removingCurrent: .signup)
+                        removingCurrent: .signup(email: nil))
     }
 }

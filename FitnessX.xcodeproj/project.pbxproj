@@ -23,11 +23,12 @@
 		92785ADF2D2D9E1400CDB431 /* NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785ADE2D2D9E1400CDB431 /* NetworkExtension.swift */; };
 		92785AE22D2DA58F00CDB431 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785AE12D2DA58F00CDB431 /* APIManager.swift */; };
 		92785AE62D2DBB6600CDB431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92785AE52D2DBB6500CDB431 /* Assets.xcassets */; };
-		927895242D70A9D40091F465 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927895232D70A9D40091F465 /* Routes.swift */; };
 		927895262D70AF4F0091F465 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927895252D70AF4F0091F465 /* Coordinator.swift */; };
 		927895282D70AF650091F465 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927895272D70AF650091F465 /* BaseCoordinator.swift */; };
 		9278952B2D70B39C0091F465 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278952A2D70B39C0091F465 /* AppCoordinator.swift */; };
 		9280454A2D74C7F70050E15A /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928045492D74C7F70050E15A /* CoordinatorType.swift */; };
+		9285D1802D772AA0005CD804 /* NavigationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285D17F2D772AA0005CD804 /* NavigationTransition.swift */; };
+		9285D1822D772BCA005CD804 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285D1812D772BCA005CD804 /* NavigationManager.swift */; };
 		928B9CC52D71D76D00C74958 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B9CC42D71D76D00C74958 /* OnboardingCoordinator.swift */; };
 		928B9CC72D71D79900C74958 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928B9CC62D71D79900C74958 /* OnboardingViewModel.swift */; };
 		92BB8B6D2D2B140200A843ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BB8B6C2D2B140200A843ED /* AppDelegate.swift */; };
@@ -61,11 +62,12 @@
 		92785ADE2D2D9E1400CDB431 /* NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtension.swift; sourceTree = "<group>"; };
 		92785AE12D2DA58F00CDB431 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		92785AE52D2DBB6500CDB431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		927895232D70A9D40091F465 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		927895252D70AF4F0091F465 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		927895272D70AF650091F465 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		9278952A2D70B39C0091F465 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		928045492D74C7F70050E15A /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
+		9285D17F2D772AA0005CD804 /* NavigationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTransition.swift; sourceTree = "<group>"; };
+		9285D1812D772BCA005CD804 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		928B9CC42D71D76D00C74958 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		928B9CC62D71D79900C74958 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		92BB8B692D2B140200A843ED /* FitnessX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +174,8 @@
 		927895202D70A7520091F465 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				927895232D70A9D40091F465 /* Routes.swift */,
+				9285D17F2D772AA0005CD804 /* NavigationTransition.swift */,
+				9285D1812D772BCA005CD804 /* NavigationManager.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -363,15 +366,16 @@
 				921E90452D2D53F10002FD1C /* OnboardingVC.swift in Sources */,
 				92F2E8902D46C34A0064886F /* CustomTextField.swift in Sources */,
 				92BB8BA12D2B252000A843ED /* Fonts.swift in Sources */,
+				9285D1822D772BCA005CD804 /* NavigationManager.swift in Sources */,
 				92BB8B8A2D2B200300A843ED /* OnboardingCVCell.swift in Sources */,
 				92785ADD2D2D9DDD00CDB431 /* Network.swift in Sources */,
+				9285D1802D772AA0005CD804 /* NavigationTransition.swift in Sources */,
 				927895262D70AF4F0091F465 /* Coordinator.swift in Sources */,
 				92BB8B712D2B140200A843ED /* ViewController.swift in Sources */,
 				927059E82D735A8700358237 /* SignUpCoordinator.swift in Sources */,
 				927059E42D7338C900358237 /* WelcomeCoordinator.swift in Sources */,
 				928B9CC52D71D76D00C74958 /* OnboardingCoordinator.swift in Sources */,
 				92BB8B6D2D2B140200A843ED /* AppDelegate.swift in Sources */,
-				927895242D70A9D40091F465 /* Routes.swift in Sources */,
 				9278952B2D70B39C0091F465 /* AppCoordinator.swift in Sources */,
 				92785ADF2D2D9E1400CDB431 /* NetworkExtension.swift in Sources */,
 				92785ADA2D2D7CFE00CDB431 /* CircularProgressButton.swift in Sources */,

@@ -9,11 +9,18 @@ import Foundation
 import UIKit
 
 enum CoordinatorType {
+    //auth flow
     case welcome
     case onboarding
-    case signup
-    case signin
+    case signup(email: String?)
+    case signin(credentials: SignInCredentials?)
+    
+    //Main flow
     case main
+//    case workout(type: WorkoutType)
+//    case nutrition(plan: MealPlan?)
+//    case profile(userId: String)
+
     
     var key: String {
         switch self {
@@ -22,6 +29,9 @@ enum CoordinatorType {
         case .signup: return "signup"
         case .signin: return "signin"
         case .main: return "main"
+//        case .workout: return "workout"
+//        case .nutrition: return "nutrition"
+//        case .profile: return "profile"
         }
     }
     
@@ -55,4 +65,28 @@ enum CoordinatorType {
         coordinator.delegate = delegate as? WelcomeCoordinatorDelegate
         return coordinator
     }
+}
+
+struct SignInCredentials {
+    let email: String
+    let password: String?
+}
+
+enum WorkoutType {
+    case cardio
+    case strength
+    case flexibility
+    case custom(String)
+}
+
+struct MealPlan {
+    let id: String
+    let type: MealType
+}
+
+enum MealType {
+    case breakfast
+    case lunch
+    case dinner
+    case snack
 }

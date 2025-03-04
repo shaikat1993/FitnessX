@@ -13,9 +13,10 @@ protocol WelcomeCoordinatorDelegate: AnyObject {
 
 class WelcomeCoordinator: FitnessBaseCoordinator {
     weak var delegate: WelcomeCoordinatorDelegate?
+    private var viewModel: WelcomeViewModel? // Strong reference
     
     override func start() {
-        let storyboard = UIStoryboard(name: "Onboarding",
+        let storyboard = UIStoryboard(name: "Onboarding", 
                                       bundle: nil)
         guard let welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeVC") as? WelcomeVC else {
             return
@@ -25,10 +26,10 @@ class WelcomeCoordinator: FitnessBaseCoordinator {
         let viewModel = WelcomeViewModel()
         viewModel.coordinator = self
         welcomeVC.configure(with: viewModel)
+        self.viewModel = viewModel // Keep strong reference
         
-        // Set as root
-        navigationController.setViewControllers([welcomeVC],
-                                                animated: true)
+        // Set as root using NavigationManager
+        NavigationManager.shared.setRoot(welcomeVC)
     }
     
     func showOnboarding() {
