@@ -11,13 +11,8 @@ class WelcomeVC: UIViewController {
 
     @IBOutlet weak var getStartedBtnOutlet: UIButton!
     
-    private var viewModel: WelcomeViewModel?
-
+    var viewModel: WelcomeViewModel?
     
-    func configure(with viewModel: WelcomeViewModel) {
-        self.viewModel = viewModel
-    }
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         getStartedBtnOutlet.applyGradient(hexColors: ["#96B3FE",

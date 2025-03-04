@@ -13,7 +13,6 @@ protocol WelcomeCoordinatorDelegate: AnyObject {
 
 class WelcomeCoordinator: FitnessBaseCoordinator {
     weak var delegate: WelcomeCoordinatorDelegate?
-    private var viewModel: WelcomeViewModel? // Strong reference
     
     override func start() {
         let storyboard = UIStoryboard(name: "Onboarding", 
@@ -25,9 +24,7 @@ class WelcomeCoordinator: FitnessBaseCoordinator {
         // Configure with ViewModel
         let viewModel = WelcomeViewModel()
         viewModel.coordinator = self
-        welcomeVC.configure(with: viewModel)
-        self.viewModel = viewModel // Keep strong reference
-        
+        welcomeVC.viewModel = viewModel
         // Set as root using NavigationManager
         NavigationManager.shared.setRoot(welcomeVC)
     }
