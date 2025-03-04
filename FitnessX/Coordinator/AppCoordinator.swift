@@ -23,6 +23,9 @@ final class AppCoordinator: FitnessBaseCoordinator {
         super.init(navigationController: navigationController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        
+        // Setup NavigationManager
+        NavigationManager.shared.setup(with: navigationController)
     }
     
     override func start() {
@@ -42,10 +45,6 @@ final class AppCoordinator: FitnessBaseCoordinator {
         addChild(coordinator, with: type.key)
         currentCoordinator = coordinator
         coordinator.start()
-        
-        if let current = current {
-            removeChild(current.key)
-        }
     }
     
     private func loadSignin(){
